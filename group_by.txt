@@ -1,0 +1,43 @@
+[GROUP_BY]
+
+
+# 1
+
+    SELECT sh.country, COUNT(*)
+    FROM software_houses sh
+    GROUP BY sh.country;
+
+# 2
+
+    SELECT r.videogame_id, COUNT(*)
+    FROM reviews r
+    GROUP BY r.videogame_id;
+
+# 3
+
+    SELECT plv.pegi_label_id, COUNT(plv.videogame_id)
+    FROM pegi_label_videogame plv
+    GROUP BY plv.pegi_label_id;
+
+
+# 4
+
+    SELECT YEAR(v.release_date), COUNT(*)
+    FROM videogames v
+    GROUP BY YEAR(v.release_date);
+
+
+# 5
+
+    SELECT dv.device_id, COUNT(dv.videogame_id)
+    FROM device_videogame dv
+    GROUP BY dv.device_id;
+
+
+# 6
+
+    SELECT r.videogame_id, AVG(r.rating)
+    FROM reviews r
+    GROUP BY r.videogame_id
+    ORDER BY AVG(r.rating);
+
